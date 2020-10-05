@@ -83,21 +83,4 @@ public class Utils {
         return state;
     }
 
-    public static int[][] kalynaTheMatricenHex(String HexString, int inputlength) {
-        int[][] state = new int[2][8];
-        int k = 0, m = -2, c = 0;
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 8; j++) {
-                k += 2;
-                m += 2;
-                c++;
-                state[i][j] = Integer.parseInt(HexString.substring(m, k), 16);
-                if (c == inputlength) {
-                    return state;
-                }
-
-            }
-        }
-        return state;
-    }
 }
