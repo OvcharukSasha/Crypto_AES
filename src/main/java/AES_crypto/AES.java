@@ -4,7 +4,8 @@ import help.Utils;
 
 import java.util.Arrays;
 
-import static help.Utils.*;
+import static help.Utils.convertToHexString;
+import static help.Utils.printMatrix;
 
 public class AES {
     int mode = 128;
@@ -60,11 +61,11 @@ public class AES {
     };
 
 
-    int[][] rCon =
-            {{0, 1, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a},
-                    {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
-                    {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
-                    {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}};
+    int[][] rCon = {
+            {0, 1, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a},
+            {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
+            {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
+            {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}};
 
 
     private int[][] stateMatrix;
@@ -72,7 +73,8 @@ public class AES {
     private int totalWords = 44;
     private int Nr = 10;
     private static int[][] w;
-    private StringBuilder sb = new StringBuilder();
+    public final int Nw = 4;
+
 
     public AES(int mode) {
         if (mode == 192) {
@@ -93,81 +95,68 @@ public class AES {
         w = new int[totalWords][4];
     }
 
-    public String encrypt(byte[][] inputBytes, String KeyString) {
-        String KeyTextHex = convertToHexString(KeyString.getBytes());
-        int keyLength = KeyString.length();
-        int[][] keysHexMatrix = Utils.aesTheMatricenHex(KeyTextHex, keyLength, Nk);
-
-        for (int i = 0; i < inputBytes.length; i++) {
-            String InputTextHex = convertToHexString(inputBytes[i]);
-            int textLength = inputBytes[i].length;
-            int[][] hexInputMatrix = Utils.aesTheMatricenHex(InputTextHex, textLength, Nk);
-
-            DoEncryption(hexInputMatrix, keysHexMatrix);
-            for (int k = 0; k < 4; k++) {
-                for (int j = 0; j < 4; j++) {
-                    sb.append(Integer.toHexString(stateMatrix[k][j]) + " ");
-                }
-            }
-        }
-        // System.out.println("Crypted text: " + sb.toString());
-        return sb.toString();
+    public int getNK() {
+        return Nk;
     }
 
-    public String decrypt(byte[][] inputBytes, String KeyString) {
-        String KeyTextHex = convertToHexString(KeyString.getBytes());
-        int keyLength = KeyString.length();
-        int[][] keysHexMatrix = Utils.aesTheMatricenHex(KeyTextHex, keyLength, Nk);
-
-        for (int i = 0; i < inputBytes.length; i++) {
-            String InputTextHex = convertToHexString(inputBytes[i]);
-            int textLength = inputBytes[i].length;
-            int[][] hexInputMatrix = Utils.aesTheMatricenHex(InputTextHex, textLength, Nk);
-
-            printMatrix(hexInputMatrix);
-            DoDecryption(hexInputMatrix, keysHexMatrix);
-            printMatrix(stateMatrix);
-            for (int k = 0; k < 4; k++) {
-                for (int j = 0; j < 4; j++) {
-                    sb.append(Integer.toHexString(stateMatrix[k][j]) );
-                }
-            }
-        }
-        System.out.println("Decrypted text: " + sb.toString());
-        return sb.toString();
+    public int getStateAt(int pos1, int pos2){
+        return stateMatrix[pos1][pos2];
     }
-
 
     public int[][] DoEncryption(int[][] state, int[][] keys) {
         stateMatrix = state;
         initialiseInitialWords(keys);
         generateWords();   //keySchedule
 
+        System.out.println("Round "+0);
         AddRoundKey(stateMatrix, getKeysForRound(0));
+//        System.out.println("After addRoundKey");
+//        printMatrix(stateMatrix);
 
         for (int round = 1; round < Nr; round++) {
             executeRound(round);
         }
+        System.out.println("Round "+Nr);
+
         subBytes(stateMatrix);
+//        System.out.println("After subBytes");
+//        printMatrix(stateMatrix);
         ShiftRows(stateMatrix);
+//        System.out.println("After shiftRows");
+//        printMatrix(stateMatrix);
         AddRoundKey(stateMatrix, getKeysForRound(Nr));
+//        System.out.println("After roundKey");
+//        printMatrix(stateMatrix);
         return stateMatrix;
     }
 
     public int[][] DoDecryption(int[][] state, int[][] keys) {
-        stateMatrix = state;
+        stateMatrix = state.clone();
         initialiseInitialWords(keys);
         generateWords();   //keySchedule
 
+        System.out.println("D_Round "+Nr);
         AddRoundKey(stateMatrix, getKeysForRound(Nr));
+//        System.out.println("After addRoundKey");
+//        printMatrix(stateMatrix);
 
         for (int round = Nr - 1; round > 0; round--) {
             executeDecryptRound(round);
         }
+        System.out.println("D_Round "+0);
 
         InvShiftRows(stateMatrix);
+//        System.out.println("After InvShiftRows");
+//        printMatrix(stateMatrix);
+
         invSubBytes(stateMatrix);
+//        System.out.println("After InvSubBytes");
+//        printMatrix(stateMatrix);
+
         AddRoundKey(stateMatrix, getKeysForRound(0));
+//        System.out.println("After AddRoundKey");
+//        printMatrix(stateMatrix);
+
         return stateMatrix;
     }
 
@@ -253,7 +242,7 @@ public class AES {
     }
 
     public void executeRound(int round) {
-//        System.out.println("round " + round + ":");
+        System.out.println("round " + round + ":");
         subBytes(stateMatrix);
 //        System.out.println("after subBytes:");
 //        printMatrix(stateMatrix);
@@ -272,10 +261,23 @@ public class AES {
     }
 
     public void executeDecryptRound(int round) {
+        System.out.println("D_Round "+round);
+
         InvShiftRows(stateMatrix);
+//        System.out.println("After InvShiftRows");
+//        printMatrix(stateMatrix);
+
         invSubBytes(stateMatrix);
+//        System.out.println("After invSubBytes");
+//        printMatrix(stateMatrix);
+
         AddRoundKey(stateMatrix, getKeysForRound(round));
+//        System.out.println("After addRoundKey");
+//        printMatrix(stateMatrix);
+
         InvMixColumns(stateMatrix);
+//        System.out.println("After invMixColumns");
+//        printMatrix(stateMatrix);
     }
 
     public int[][] subBytes(int[][] stateMatrix) {
