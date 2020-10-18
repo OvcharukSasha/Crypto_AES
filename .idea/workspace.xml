@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c09849a-9d04-42d0-a072-0560f2787b16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AES_crypto/AES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AES_crypto/AES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AES_crypto/AES_ECB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AES_crypto/AES_ECB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample-2mb-text-file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample-large-text-file.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AES_crypto/AES.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AES_crypto/AES.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AES_crypto/AES_CBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AES_crypto/AES_CBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AES_crypto/AES_ECB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AES_crypto/AES_ECB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample-2mb-text-file.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="8c09849a-9d04-42d0-a072-0560f2787b16" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
