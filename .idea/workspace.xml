@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c09849a-9d04-42d0-a072-0560f2787b16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AES_crypto/AES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AES_crypto/AES_ECB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AES_crypto/AES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AES_crypto/AES.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AES_crypto/AES_ECB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AES_crypto/AES_ECB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/help/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/help/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/textToTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/textToTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AEStests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AEStests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample-2mb-text-file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample-large-text-file.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/AES_crypto/AES.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AES_crypto/AES.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AES_crypto/AES_CBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AES_crypto/AES_CBC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AES_crypto/AES_ECB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AES_crypto/AES_ECB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/help/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/help/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textToTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/textToTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/AEStests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/AEStests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample-2mb-text-file.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,41 +63,30 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AEStests">
-    <configuration name="AES_CBC_tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in Crypto_AES">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Crypto_AES" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AES_CTR_tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Crypto_AES" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AES_CBC_tests" />
+      <option name="MAIN_CLASS_NAME" value="AES_CTR_tests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AES_CBC_tests.testAES_CBC_Decrypt256" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AES_OFB_tests,testAES_OFB_Encrypt128 and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Crypto_AES" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AES_CBC_tests" />
-      <option name="METHOD_NAME" value="testAES_CBC_Decrypt256" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AES_CBC_tests.testAES_CBC_Encrypt256" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Crypto_AES" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AES_CBC_tests" />
-      <option name="METHOD_NAME" value="testAES_CBC_Encrypt256" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AES_ECB_tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Crypto_AES" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AES_ECB_tests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="AES_OFB_tests,testAES_OFB_Encrypt128" />
+        <pattern testClass="AES_OFB_tests,testAES_CFB_Decrypt128" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,13 +100,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in Crypto_AES" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Crypto_AES" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in Crypto_AES" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AES_OFB_tests,testAES_OFB_Encrypt128 and 1 more" />
+        <item itemvalue="JUnit.AES_CTR_tests" />
         <item itemvalue="JUnit.AEStests" />
-        <item itemvalue="JUnit.AES_ECB_tests" />
-        <item itemvalue="JUnit.AES_CBC_tests" />
-        <item itemvalue="JUnit.AES_CBC_tests.testAES_CBC_Decrypt256" />
-        <item itemvalue="JUnit.AES_CBC_tests.testAES_CBC_Encrypt256" />
       </list>
     </recent_temporary>
   </component>
@@ -148,54 +144,67 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="408" y="195" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1602942697853">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="408" y="195" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1440.811@0.23.1440.811" timestamp="1602942697853" />
     <state x="137" y="123" width="1051" height="598" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1602791618946">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="137" y="123" width="1051" height="598" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1440.806@0.23.1440.806" timestamp="1602791618946" />
-    <state x="366" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602876717940">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state x="366" y="231" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602941037977">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
+    <state x="366" y="231" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.806@0.23.1440.806" timestamp="1602941037977" />
     <state x="366" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.808@0.23.1440.808" timestamp="1602876717940" />
     <state x="114" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602441513723">
       <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="114" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.801@0.23.1440.801" timestamp="1602441513723" />
-    <state width="1340" height="233" key="GridCell.Tab.0.bottom" timestamp="1602886445980">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state width="1340" height="129" key="GridCell.Tab.0.bottom" timestamp="1603018749205">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state width="1209" height="211" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1602451206330" />
     <state width="1209" height="261" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1602540869159" />
     <state width="1209" height="202" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1602542111735" />
-    <state width="1340" height="297" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1602794518270" />
-    <state width="1340" height="233" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1602886445980" />
-    <state width="1209" height="267" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1602536593850" />
-    <state width="1340" height="233" key="GridCell.Tab.0.center" timestamp="1602886445979">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state width="1340" height="271" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1602941848442" />
+    <state width="1340" height="233" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1602886462109" />
+    <state width="1340" height="191" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1602957660047" />
+    <state width="1340" height="332" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1602942385485" />
+    <state width="1340" height="129" key="GridCell.Tab.0.bottom/0.23.1440.814@0.23.1440.814" timestamp="1603018749205" />
+    <state width="1340" height="129" key="GridCell.Tab.0.center" timestamp="1603018749203">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state width="1209" height="211" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1602451206330" />
     <state width="1209" height="261" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1602540869158" />
     <state width="1209" height="202" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1602542111734" />
-    <state width="1340" height="297" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1602794518270" />
-    <state width="1340" height="233" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1602886445979" />
-    <state width="1209" height="267" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1602536593848" />
-    <state width="1340" height="233" key="GridCell.Tab.0.left" timestamp="1602886445979">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state width="1340" height="271" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1602941848441" />
+    <state width="1340" height="233" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1602886462108" />
+    <state width="1340" height="191" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1602957660046" />
+    <state width="1340" height="332" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1602942385485" />
+    <state width="1340" height="129" key="GridCell.Tab.0.center/0.23.1440.814@0.23.1440.814" timestamp="1603018749203" />
+    <state width="1340" height="129" key="GridCell.Tab.0.left" timestamp="1603018749202">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state width="1209" height="211" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1602451206329" />
     <state width="1209" height="261" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1602540869158" />
     <state width="1209" height="202" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1602542111733" />
-    <state width="1340" height="297" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1602794518269" />
-    <state width="1340" height="233" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1602886445979" />
-    <state width="1209" height="267" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1602536593847" />
-    <state width="1340" height="233" key="GridCell.Tab.0.right" timestamp="1602886445979">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state width="1340" height="271" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1602941848441" />
+    <state width="1340" height="233" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1602886462108" />
+    <state width="1340" height="191" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1602957660045" />
+    <state width="1340" height="332" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1602942385484" />
+    <state width="1340" height="129" key="GridCell.Tab.0.left/0.23.1440.814@0.23.1440.814" timestamp="1603018749202" />
+    <state width="1340" height="129" key="GridCell.Tab.0.right" timestamp="1603018749204">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state width="1209" height="211" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1602451206330" />
     <state width="1209" height="261" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1602540869159" />
     <state width="1209" height="202" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1602542111734" />
-    <state width="1340" height="297" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1602794518270" />
-    <state width="1340" height="233" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1602886445979" />
-    <state width="1209" height="267" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1602536593848" />
+    <state width="1340" height="271" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1602941848442" />
+    <state width="1340" height="233" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1602886462109" />
+    <state width="1340" height="191" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1602957660046" />
+    <state width="1340" height="332" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1602942385485" />
+    <state width="1340" height="129" key="GridCell.Tab.0.right/0.23.1440.814@0.23.1440.814" timestamp="1603018749204" />
     <state width="1340" height="256" key="GridCell.Tab.1.bottom" timestamp="1602885470418">
       <screen x="0" y="23" width="1440" height="808" />
     </state>
@@ -236,45 +245,36 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="339" y="254" key="com.intellij.ide.util.TipDialog/0.23.1440.806@0.23.1440.806" timestamp="1602790579633" />
-    <state x="321" y="181" width="683" height="491" key="find.popup" timestamp="1602881241580">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state x="321" y="182" width="683" height="493" key="find.popup" timestamp="1602947805137">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="321" y="179" width="683" height="486" key="find.popup/0.23.1440.801@0.23.1440.801" timestamp="1602445703195" />
     <state x="321" y="180" width="683" height="488" key="find.popup/0.23.1440.804@0.23.1440.804" timestamp="1602532002300" />
     <state x="321" y="181" width="683" height="491" key="find.popup/0.23.1440.808@0.23.1440.808" timestamp="1602881241580" />
+    <state x="321" y="182" width="683" height="493" key="find.popup/0.23.1440.811@0.23.1440.811" timestamp="1602947805137" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/AES_crypto/AES_ECB.java</url>
-          <line>103</line>
+          <line>81</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/AES_crypto/AES_ECB.java</url>
-          <line>102</line>
+          <line>80</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java</url>
-          <line>76</line>
+          <line>58</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java</url>
-          <line>162</line>
+          <line>117</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java</url>
-          <line>155</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java</url>
-          <line>158</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/help/Utils.java</url>
@@ -283,17 +283,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java</url>
-          <line>31</line>
+          <line>22</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java</url>
-          <line>33</line>
+          <line>24</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/AES_crypto/AES_CBC.java</url>
-          <line>36</line>
+          <line>27</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

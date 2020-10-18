@@ -1,9 +1,7 @@
 package AES_crypto;
-
 import help.Utils;
 
 import java.util.Arrays;
-
 import static help.Utils.convertToHexString;
 import static help.Utils.printMatrix;
 
@@ -108,7 +106,7 @@ public class AES {
         initialiseInitialWords(keys);
         generateWords();   //keySchedule
 
-        System.out.println("Round "+0);
+        //System.out.println("Round "+0);
         AddRoundKey(stateMatrix, getKeysForRound(0));
 //        System.out.println("After addRoundKey");
 //        printMatrix(stateMatrix);
@@ -116,7 +114,7 @@ public class AES {
         for (int round = 1; round < Nr; round++) {
             executeRound(round);
         }
-        System.out.println("Round "+Nr);
+       // System.out.println("Round "+Nr);
 
         subBytes(stateMatrix);
 //        System.out.println("After subBytes");
@@ -127,6 +125,9 @@ public class AES {
         AddRoundKey(stateMatrix, getKeysForRound(Nr));
 //        System.out.println("After roundKey");
 //        printMatrix(stateMatrix);
+
+//        System.out.println("After encryption:");
+//        printMatrix(stateMatrix);
         return stateMatrix;
     }
 
@@ -135,7 +136,7 @@ public class AES {
         initialiseInitialWords(keys);
         generateWords();   //keySchedule
 
-        System.out.println("D_Round "+Nr);
+       // System.out.println("D_Round "+Nr);
         AddRoundKey(stateMatrix, getKeysForRound(Nr));
 //        System.out.println("After addRoundKey");
 //        printMatrix(stateMatrix);
@@ -143,7 +144,7 @@ public class AES {
         for (int round = Nr - 1; round > 0; round--) {
             executeDecryptRound(round);
         }
-        System.out.println("D_Round "+0);
+       // System.out.println("D_Round "+0);
 
         InvShiftRows(stateMatrix);
 //        System.out.println("After InvShiftRows");
@@ -242,7 +243,7 @@ public class AES {
     }
 
     public void executeRound(int round) {
-        System.out.println("round " + round + ":");
+//        System.out.println("round " + round + ":");
         subBytes(stateMatrix);
 //        System.out.println("after subBytes:");
 //        printMatrix(stateMatrix);
@@ -261,7 +262,7 @@ public class AES {
     }
 
     public void executeDecryptRound(int round) {
-        System.out.println("D_Round "+round);
+//        System.out.println("D_Round "+round);
 
         InvShiftRows(stateMatrix);
 //        System.out.println("After InvShiftRows");
