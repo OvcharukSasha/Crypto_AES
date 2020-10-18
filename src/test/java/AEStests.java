@@ -1,9 +1,7 @@
 import AES_crypto.AES;
-import help.Utils;
 import org.junit.Before;
 import org.junit.Test;
 
-import static help.Utils.printMatrix;
 import static org.junit.Assert.assertEquals;
 
 public class AEStests {
@@ -150,40 +148,56 @@ public class AEStests {
 
     }
 
-    @Test
-    public void testAES() {
-        {
-            AES Aes128 = new AES(128);
-            String key = "Thats my Kung Fu";
-            String plainText = "Two One Nine Two";
-            assertEquals("29 57 40 1a c3 14 22 2 50 20 99 d7 5f f6 b3 3a", Aes128.encrypt(Utils.splitBy128Bits(plainText.getBytes()), key).trim());
-
-        }
-    }
 
     @Test
     public void testDoEncryption128() {
         // test data: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf
         AES aes128 = new AES(128);
+
         int[][] initialMatrix = {
-                {0x32, 0x88, 0x31, 0xe0},
-                {0x43, 0x5a, 0x31, 0x37},
-                {0xf6, 0x30, 0x98, 0x07},
-                {0xa8, 0x8d, 0xa2, 0x34}};
+                {0x0, 0x44, 0x88, 0xcc},
+                {0x11, 0x55, 0x99, 0xdd},
+                {0x22, 0x66, 0xaa, 0xee},
+                {0x33, 0x77, 0xbb, 0xff}};
 
         int[][] initialKey = {
-                {0x2b, 0x28, 0xab, 0x09},
-                {0x7e, 0xae, 0xf7, 0xcf},
-                {0x15, 0xd2, 0x15, 0x4f},
-                {0x16, 0xa6, 0x88, 0x3c}};
+                {0x00, 0x04, 0x08, 0x0c},
+                {0x01, 0x05, 0x09, 0x0d},
+                {0x02, 0x06, 0x0a, 0x0e},
+                {0x03, 0x07, 0x0b, 0x0f}};
 
-        printMatrix(initialMatrix);
         int[][] cryptedMatrix = {
-                {0x39, 0x02, 0xdc, 0x19},
-                {0x25, 0xdc, 0x11, 0x6a},
-                {0x84, 0x09, 0x85, 0x0b},
-                {0x1d, 0xfb, 0x97, 0x32}};
+                {0x69, 0x6a, 0xd8, 0x70},
+                {0xc4, 0x7b, 0xcd, 0xb4},
+                {0xe0, 0x04, 0xb7, 0xc5},
+                {0xd8, 0x30, 0x80, 0x5a}};
+
         assertEquals(cryptedMatrix, aes128.DoEncryption(initialMatrix, initialKey));
+
+    }
+
+    @Test
+    public void testDoDecryption128() {
+        // test data: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf
+        AES aes128 = new AES(128);
+        int[][] cryptedMatrix = {
+                {0x69, 0x6a, 0xd8, 0x70},
+                {0xc4, 0x7b, 0xcd, 0xb4},
+                {0xe0, 0x04, 0xb7, 0xc5},
+                {0xd8, 0x30, 0x80, 0x5a}};
+
+        int[][] initialKey = {
+                {0x00, 0x04, 0x08, 0x0c},
+                {0x01, 0x05, 0x09, 0x0d},
+                {0x02, 0x06, 0x0a, 0x0e},
+                {0x03, 0x07, 0x0b, 0x0f}};
+
+        int[][] decryptedMatrix = {
+                {0x0, 0x44, 0x88, 0xcc},
+                {0x11, 0x55, 0x99, 0xdd},
+                {0x22, 0x66, 0xaa, 0xee},
+                {0x33, 0x77, 0xbb, 0xff}};
+        assertEquals(decryptedMatrix, aes128.DoDecryption(cryptedMatrix, initialKey));
 
     }
 
@@ -241,30 +255,6 @@ public class AEStests {
 
     }
 
-    @Test
-    public void testDoDecryption128() {
-        // test data: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf
-        AES aes128 = new AES(128);
-        int[][] cryptedMatrix = {
-                {0x69, 0x6a, 0xd8, 0x70},
-                {0xc4, 0x7b, 0xcd, 0xb4},
-                {0xe0, 0x04, 0xb7, 0xc5},
-                {0xd8, 0x30, 0x80, 0x5a}};
-
-        int[][] initialKey = {
-                {0x00, 0x04, 0x08, 0x0c},
-                {0x01, 0x05, 0x09, 0x0d},
-                {0x02, 0x06, 0x0a, 0x0e},
-                {0x03, 0x07, 0x0b, 0x0f}};
-
-        int[][] decryptedMatrix = {
-                {0x0, 0x44, 0x88, 0xcc},
-                {0x11, 0x55, 0x99, 0xdd},
-                {0x22, 0x66, 0xaa, 0xee},
-                {0x33, 0x77, 0xbb, 0xff}};
-        assertEquals(decryptedMatrix, aes128.DoDecryption(cryptedMatrix, initialKey));
-
-    }
 
     @Test
     public void testDoDecryption192() {

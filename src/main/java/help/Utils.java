@@ -65,6 +65,33 @@ public class Utils {
         return String.format("%02X", new BigInteger(1, arg.getBytes()));
     }
 
+//    public static byte [][] hexToByteArray(String hexString){
+//        String[] hexes = hexString.split(" ");
+//        byte[] byteArray = new byte[hexes.length];
+//        for(int i=0; i<hexes.length; i++){
+//            byteArray[i]= hexToString(hexes[i]);
+//        }
+//        return byteArray;
+//    }
+
+    public static byte hexToByte(String str){
+        int it = Integer.parseInt(str, 16);
+        BigInteger bigInt = BigInteger.valueOf(it);
+        return bigInt.byteValue();
+
+    }
+
+    public static String removeSpaces(String hexString){
+        String[] hexes = hexString.split(" ");
+        StringBuilder sb=new StringBuilder();
+        for (String str:hexes
+             ) {
+            sb.append(str);
+        }
+
+        return sb.toString();
+    }
+
     public static int[][] aesTheMatricenHex(String HexString, int inputlength, int words) {
         int[][] state = new int[4][words];
         int k = 0, m = -2, c = 0;
@@ -81,6 +108,37 @@ public class Utils {
             }
         }
         return state;
+    }
+
+    public static byte[][] convertToByteMatrix(int[][] intMatrix){
+        byte[][] matrix= new byte[intMatrix.length][intMatrix[0].length];
+        for (int i=0; i<intMatrix.length; i++)
+            for (int j=0; j<intMatrix[0].length; j++){
+                matrix[i][j]= Byte.valueOf((byte) intMatrix[i][j]);
+            }
+        return matrix;
+    }
+
+    public static int[][] matrixXOR(int[][]a, int[][]b){
+        int[][]result=new int[a.length][a[1].length];
+        if (a.length==b.length){
+            for(int i=0; i<a.length; i++)
+                for(int k=0; k<a[1].length; k++){
+                    result[i][k]=a[i][k]^b[i][k];
+                }
+
+        }
+        return result;
+    }
+
+    public int[][] deepCopy(int[][]a){
+        int[][]copy=new int[a.length][a[1].length];
+
+            for(int i=0; i<a.length; i++)
+                for(int k=0; k<a[1].length; k++){
+                    copy[i][k]=a[i][k];
+                }
+        return copy;
     }
 
 }
